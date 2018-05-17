@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>tree-me</groupId>
+    <artifactId>tree-me-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>tree-me-api</module>
+        <module>tree-me-core</module>
+        <module>tree-me-index</module>
+        <module>tree-me-samples</module>
+        <module>tree-me-test</module>
+    </modules>
+
+    <properties>
+        <elasticsearch.version>1.7.5</elasticsearch.version>
+        <h2.version>1.4.196</h2.version>
+        <ironhide.version>1.1.3-SNAPSHOT</ironhide.version>
+        <guava.version>19.0</guava.version>
+        <jackson.version>2.9.3</jackson.version>
+        <junit.version>4.12</junit.version>
+        <mango.version>2.0.0</mango.version>
+        <slf4j.version>1.7.25</slf4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ironhide</groupId>
+                <artifactId>ironhide-core</artifactId>
+                <version>${ironhide.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ironhide</groupId>
+                <artifactId>ironhide-client</artifactId>
+                <version>${ironhide.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ironhide</groupId>
+                <artifactId>ironhide-transport</artifactId>
+                <version>${ironhide.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.calrissian.mango</groupId>
+                <artifactId>mango-core</artifactId>
+                <version>${mango.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <!-- test -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>ironhide</groupId>
+                <artifactId>ironhide-core</artifactId>
+                <version>${ironhide.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <url>https://nexus.devforce.io/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+</project>

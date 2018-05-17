@@ -1,0 +1,29 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# IntelliJ
+*.iml
+.idea/
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+.externalToolBuilders/
+
+# Maven
+*.versionsBackup
+dependency-reduced-pom.xml
+target/
+
+# Extra
+.svn/
+*/.svn
+.DS_Store
+
